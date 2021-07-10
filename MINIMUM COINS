@@ -1,0 +1,29 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[]={1,2,5,10,20,50,100,200,500,2000};
+    int val;
+    cout<<"enter the value"<<endl;
+    cin>>val;
+    int count=0;
+    for (int i=9;i>0;i--)
+    {
+        if(a[i]<=val)
+        {
+            val=val-a[i];
+            count++;
+            cout<<a[i]<<"+"<<" ";
+            i=9;
+        }
+        
+    }
+    cout<<endl;
+    cout<<"the count is "<<count<<endl;
+
+    return 0;
+}
