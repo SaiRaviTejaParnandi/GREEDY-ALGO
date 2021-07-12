@@ -1,0 +1,28 @@
+    int minimumDays(int S, int N, int M){
+        int req=0;
+        int count=0;
+        int rem =0;
+        if(M>N)
+        {
+        return -1;
+        }
+        if(S>=7 && 6*N<7*M)
+        {
+            return -1;
+        }
+        while(req<S*M)
+        
+        {
+            if(rem>M)
+            {
+               rem=rem-N;
+            }
+            else{
+            count++;
+            req=req+N;
+            rem=rem+N-M;
+            
+            }
+        }
+        return count;
+    }
