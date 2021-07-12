@@ -1,0 +1,30 @@
+    vector<int> candyStore(int candies[], int N, int k)
+    {
+ 
+        vector<int>ans;
+        int ma=0;
+        int mi=0;
+        int count=0;
+        sort(candies,candies+N);
+         for(int i=0;i<N;i++)
+        {
+            if(count<N)
+            {
+              mi=mi+candies[i];
+              count=count+k+1;
+            }
+                
+        }
+        count=0;
+        for(int j=N-1;j>=0;j--)
+        {
+            if(count<N)
+            {
+             ma=ma+candies[j];
+             count=count+k+1;    
+            }
+            
+        }
+    ans.push_back(mi);
+    ans.push_back(ma);
+    return ans;
