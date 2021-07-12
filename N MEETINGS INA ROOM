@@ -1,0 +1,28 @@
+static bool comp(pair<int,int> a, pair<int,int>b)
+    {
+        if(a.second<b.second)
+          return true;
+          
+          return false;
+    }
+    int maxMeetings(int start[], int end[], int n)
+    {
+      int count=1;
+     vector<pair<int ,int> > v(n);
+     for (int i=0;i<n;i++)
+     {
+         v[i]={start[i],end[i]};
+     }
+     sort(v.begin(),v.end(),comp);
+     int j =v[0].second;
+     for(int i=1;i<n;++i)
+     {
+         if(v[i].first>j)
+         {
+             count++;
+             j=v[i].second;
+             
+         }
+     }
+     return count;
+    }
