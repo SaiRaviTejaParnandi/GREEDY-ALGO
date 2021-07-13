@@ -1,0 +1,17 @@
+int main()
+{
+    cout<<"hello world";
+    int a[]={1,4,8,2};
+    int sum=0;
+    sort(a,a+4);
+    int i=0,j=3;
+    while(j!=i)
+     {
+         sum=sum+abs(a[i]-a[j]);
+         i++;
+         j--;
+     }
+    cout<<"max absolute sum is";
+
+    return 0;
+}
